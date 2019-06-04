@@ -1,0 +1,97 @@
+<section class="mod-wrapper mod-story">
+<header class="mod-header"><h1 class="headline">WSB Now&nbsp;<span class="stamp">LIVE</span>&nbsp;</h1></header>
+<script>
+setTimeout(function () {
+cmanvato.setupMetrics();
+anvp.p0.mergedConfig.autoplay=true;
+}, 800);
+window.cmg = {
+"adconf": {
+   "targeting": {
+       "category": "livestream",
+       "kw": "livestream",
+       "obj_id": "article id",
+       "obj_type": "section front",
+       "owner_id": "[[OWNER_ID]]",
+       "sky": "sky",
+       "tag": "livestream",
+       "temp_range": "temp range",
+       "topics": "livestream",
+       "weather": "weather condition"
+   }
+}
+}
+console.log('win',window.cmg);
+</script><script src="https://mediaweb.wsbtv.com/video/player/cmanvato4.js"></script>
+<div class="anvato-player" data-anv-access-key="XvEgwyJvx7lrVI8JLmHeVCW8mOmy8Mbo" data-autoplay="true" data-videoid="cmg-wsbtv-appletv" data-volume=".5" id="p1"></div><script>
+function getPlayerWidthCallback(){
+   var width = 720;
+   var player = document.getElementById('p1');
+   if (player){
+       width = player.clientWidth;
+   }
+   console.log('getPlayerWidthCallback', width);
+   return width;
+}
+function getPlayerHeightCallback(){
+   var height = 404;
+   var player = document.getElementById('p1');
+   if (player){
+       height = player.clientHeight;
+       if(height == 0){
+           height = Math.round(0.56111 * player.clientWidth);
+       }
+   }
+   console.log('getPlayerHeightCallback', height);
+   return height;
+}
+//var playerwidth=720;
+//var playerheight=404;
+var videoTitle='WSBTV Live News', videoId='cmg-wsbtv', categories='news', sourcePageUrl='www.wsbtv.com';
+var plugins = {
+  heartbeat: {
+               marketingCloudId: "146234B8527835E10A490D44@AdobeOrg",
+               customTrackingServer: "coxnet.112.2o7.net",
+               trackingServer: "coxnet.hb.omtrdc.net",
+               jobId: "j2",
+               account: "coxwsbtv,coxglobal",
+               publisherId: "coxnet",
+               version: "1.5"
+           },
+  dfp: {
+       clientSide: {
+
+        adTagUrl: "https://pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=/12523293/Atlanta_TV/wsbtv_web_default/pre_roll&impl=s&gdfp_req=1&env=vp&output=xml_vast3&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]"
+       },
+       serverSide: {
+           cust_params: {
+               playerWidth:getPlayerWidthCallback(),
+               playerHeight: getPlayerHeightCallback(),
+               videoTitle:videoTitle,
+               videoId:videoId,
+               categories:categories,
+               sourcePageUrl:sourcePageUrl
+           },
+           playerWidth: getPlayerWidthCallback(),
+           playerHeight: getPlayerHeightCallback(),
+           videoTitle: videoTitle,
+           videoId: videoId,
+           categories: categories,
+           sourcePageUrl: sourcePageUrl
+
+       }
+   },
+   comscore: {
+                clientId: 6035944
+                                },
+};
+console.log('plugins', plugins);
+cmanvato.set('plugins', plugins);
+
+cmanvato.set('poster', "https://mediaweb.wsbtv.com/video/images/wsbtv-actionnews.jpg");
+cmanvato.set('pauseOnClick', "true");
+cmanvato.set('revealBeacons', "true");
+cmanvato.set('live', "true");
+window.cmanvato.setup();
+
+</script><script>EP.Utils.VideoDTMTrackingUtil.playerId("p1");EP.Utils.VideoViewportUtil.registerOnVideoViewport("p1");</script></section>
